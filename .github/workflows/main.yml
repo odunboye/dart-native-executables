@@ -20,7 +20,9 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: DanTup/gh-actions/setup-dart@master
+      - run: pwd
       - run: mkdir build
+      - run: pwd
       - run: dart compile exe bin/main.dart -v -o build/${{ matrix.output-name }}
       - uses: actions/upload-artifact@v1
         with:
